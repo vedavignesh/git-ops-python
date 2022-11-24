@@ -36,7 +36,7 @@ node {
                         sh "git config user.name vedavignesh"
                         //sh "git switch master"
                         sh "cat deployment.yaml"
-                        sh "sed -i 's+raj80dockerid/test.*+raj80dockerid/test:${env.BUILD_NUMBER}+g' deployment.yaml"
+                        sh "sed -i 's+vedavignesh/gitopspython.*+vedavignesh/gitopspython:${env.BUILD_NUMBER}+g' deployment.yaml"
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
