@@ -18,7 +18,7 @@ spec:
         app: flaskdemo
     spec:
       containers:
-      - image: vedavignesh/gitopspython:22
+      - image: vedavignesh/gitopspython
         name: flaskdemo
         resources: {}
 status: {}
@@ -30,7 +30,7 @@ metadata:
   labels:
     app: lb-service
 spec:
-  type: LoadBalancer
+  type: NodePort
   ports:
   - port: 80
     targetPort: 5000
