@@ -9,7 +9,7 @@ node {
 
     stage('Build image') {
   
-       app = docker.build("vedavignesh/gitopspython")
+       app = docker.build("vedavignesh/test")
     }
 
     stage('Test image') {
@@ -36,7 +36,7 @@ node {
                         sh "git config user.name vedavignesh"
                         //sh "git switch master"
                         sh "cat deployment.yaml"
-                        sh "sed -i 's+vedavignesh/gitopspython.*+vedavignesh/gitopspython:${env.BUILD_NUMBER}+g' deployment.yaml"
+                        sh "sed -i 's+vedavignesh/test.*+vedavignesh/test:${env.BUILD_NUMBER}+g' deployment.yaml"
                         sh "cat deployment.yaml"
                         sh "git add ."
                         sh "git commit -m 'Triggered Build: ${env.BUILD_NUMBER}'"
